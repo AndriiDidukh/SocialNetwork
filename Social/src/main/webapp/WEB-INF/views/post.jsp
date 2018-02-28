@@ -15,19 +15,18 @@
 		<div class="azx">
 			<h3>To view this page you need to SignIn</h3>
 			<h3>
-				<a href="/login">SingIn</a>
+				<a href="/login">Sing In</a>
 			</h3>
-			<h3>Still not registered? Register now!</h3>
+			<h3>Still not registered? Registrate now!</h3>
 			<h3>
-				<a href="/registration">Register</a>
+				<a href="/registration">Sign Up</a>
 			</h3>
 		</div>
 	</security:authorize>
 	<security:authorize access="isAuthenticated()">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-3 col-3sm-3 col-md-3 col-lg-3"
-					style="box-shadow: 0 0 0 4px green;">
+				<div class="col-xs-3 col-3sm-3 col-md-3 col-lg-3 greenRightBox">
 					<div class="leftsize">
 						<div class="logo">
 							<img class="img-thumbnail" width="100%"

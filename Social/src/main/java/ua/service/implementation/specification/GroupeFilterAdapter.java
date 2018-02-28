@@ -15,12 +15,12 @@ import org.springframework.data.jpa.domain.Specifications;
 import ua.entity.Groupe;
 import ua.form.filter.GroupeFilterForm;
 
-public class GroupeFilterAdapter implements Specification<Groupe>{
-	
-private final GroupeFilterForm form;
-	
+public class GroupeFilterAdapter implements Specification<Groupe> {
+
+	private final GroupeFilterForm form;
+
 	private final List<Specification<Groupe>> filters = new ArrayList<>();
-	
+
 	public GroupeFilterAdapter(GroupeFilterForm form) {
 		if (form != null) {
 			this.form = form;
@@ -28,33 +28,29 @@ private final GroupeFilterForm form;
 			this.form = new GroupeFilterForm();
 		}
 	}
-	
-	private void findByCreator(){
-		if(!form.getCreator().isEmpty()){
-			filters.add((root, query, cb)->root.get("creator").in(form.getCreator()));
+
+	private void findByCreator() {
+		if (!form.getCreator().isEmpty()) {
+			filters.add((root, query, cb) -> root.get("creator").in(form.getCreator()));
 		}
 	}
-	
-	private void findByName(){
-		if(!form.getName().isEmpty()){
-			filters.add((root, query, cb)->root.get("name").in(form.getName()));
+
+	private void findByName() {
+		if (!form.getName().isEmpty()) {
+			filters.add((root, query, cb) -> root.get("name").in(form.getName()));
 		}
 	}
 
 	@Override
 	public Predicate toPredicate(Root<Groupe> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
 		if (query.getResultType() != Long.class && query.getResultType() != long.class) {
-			
 			root.fetch("creator", JoinType.LEFT);
-		
 		}
-		
 		findByName();
 		findByCreator();
-	
-		if(!filters.isEmpty()){
+		if (!filters.isEmpty()) {
 			Specifications<Groupe> spec = Specifications.where(filters.get(0));
-			for(Specification<Groupe> s : filters.subList(1, filters.size())){
+			for (Specification<Groupe> s : filters.subList(1, filters.size())) {
 				spec = spec.and(s);
 			}
 			return spec.toPredicate(root, query, cb);

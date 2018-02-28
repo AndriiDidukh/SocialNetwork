@@ -143,7 +143,6 @@ public class UserPageServiceImpl implements UserPageService, UserDetailsService 
 		try {
 			return userPageRepository.findOneCountryInited(Integer.valueOf(principal.getName()));
 		} catch (Exception e) {
-
 		}
 		return null;
 	}

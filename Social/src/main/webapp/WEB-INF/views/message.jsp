@@ -15,11 +15,11 @@
 		<div class="azx">
 			<h3>To view this page you need to SignIn</h3>
 			<h3>
-				<a href="/login">SingIn</a>
+				<a href="/login">Sing In</a>
 			</h3>
-			<h3>Still not registered? Register now!</h3>
+			<h3>Still not registered? Registrate now!</h3>
 			<h3>
-				<a href="/registration">Register</a>
+				<a href="/registration">Sign Up</a>
 			</h3>
 		</div>
 	</security:authorize>
@@ -48,8 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"
-					style="box-shadow: 0 0 0 4px green;">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 greenRightBox">
 					<div class="Header">
 						<div class="name">
 							<a><security:authentication property="principal.name" /> <security:authentication
@@ -73,12 +72,10 @@
 						<h3>Chouse Person for texting</h3>
 						<c:forEach items="${messages}" var="userPage">
 							<div class="row">
-								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-									<div class="aligncenter">
-										<a href="/texting/${userPage.id}"><img
-											src="/images/userpage/${userPage.id}${userPage.path}?version=${userPage.version}"
-											height="110px"></a>
-									</div>
+								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 aligncenter">
+									<a href="/texting/${userPage.id}"><img
+										src="/images/userpage/${userPage.id}${userPage.path}?version=${userPage.version}"
+										height="110px"></a>
 									<div class="span"></div>
 								</div>
 								<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">

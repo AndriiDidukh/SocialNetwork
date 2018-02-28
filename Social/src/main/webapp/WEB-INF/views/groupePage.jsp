@@ -15,11 +15,11 @@
 		<div class="azx">
 			<h3>To view this page you need to SignIn</h3>
 			<h3>
-				<a href="/login">SingIn</a>
+				<a href="/login">Sing In</a>
 			</h3>
-			<h3>Still not registered? Register now!</h3>
+			<h3>Still not registered? Registrate now!</h3>
 			<h3>
-				<a href="/registration">Register</a>
+				<a href="/registration">Sign Up</a>
 			</h3>
 		</div>
 	</security:authorize>
@@ -48,8 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"
-					style="box-shadow: 0 0 0 4px green;">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 greenRightBox">
 					<div class="Header">
 						<div class="name">
 							<a><security:authentication property="principal.name" /> <security:authentication
@@ -78,9 +77,7 @@
 									width="100%">
 							</div>
 							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-
 								<div class="span">${groupe.description}</div>
-
 								<div class="span">
 									Groupe Creator: <a href="/peoplePage/${groupe.creator.id}">${groupe.creator.name}
 										${groupe.creator.surname}</a>
@@ -119,8 +116,7 @@
 							</div>
 						</form:form>
 						<h3>GROUPE POSTS</h3>
-						<div class="row"
-							style="box-shadow: 0 0 0 1px green; border-radius: 15px; margin-right: 30px;">
+						<div class="row greenGroupePageBox">
 							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
 								<h3>From</h3>
 							</div>
@@ -129,8 +125,7 @@
 							</div>
 						</div>
 						<c:forEach items="${posts}" var="post">
-							<div class="row"
-								style="box-shadow: 0 0 0 1px silver; margin-right: 30px; border-radius: 15px; margin-top: 5px;">
+							<div class="row groupePageBox">
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 									<div class="row">
 										<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-center">
@@ -151,10 +146,8 @@
 									</div>
 									<div>${post.text}</div>
 								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="date">
-										<sup>${post.date}</sup>
-									</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 date">
+									<sup>${post.date}</sup>
 								</div>
 								<p></p>
 							</div>

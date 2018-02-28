@@ -15,11 +15,11 @@
 		<div class="azx">
 			<h3>To view this page you need to SignIn</h3>
 			<h3>
-				<a href="/login">SingIn</a>
+				<a href="/login">Sing In</a>
 			</h3>
-			<h3>Still not registered? Register now!</h3>
+			<h3>Still not registered? Registrate now!</h3>
 			<h3>
-				<a href="/registration">Register</a>
+				<a href="/registration">Sign Up</a>
 			</h3>
 		</div>
 	</security:authorize>
@@ -48,8 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"
-					style="box-shadow: 0 0 0 4px green;">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 greenRightBox">
 					<div class="rightside">
 						<div class="Header">
 							<div class="name">
@@ -92,15 +91,16 @@
 									</tr>
 									<tr>
 										<td>Place of residence</td>
-										<td>${user.country}, ${user.city}</td>
+										<td>${user.country},${user.city}</td>
 									</tr>
 									<tr>
 										<td>Email</td>
 										<td>${user.email}</td>
 									</tr>
 									<tr>
-										<td>Date Of Birth</td>
-										<td>${user.dayOfBirth.id} ${user.mounthOfBirth}, ${user.yearOfBirth.id}</td>
+										<td>Date of Birth</td>
+										<td>${user.dayOfBirth.id}${user.mounthOfBirth},
+											${user.yearOfBirth.id}</td>
 									</tr>
 								</table>
 								<a href="/texting/${user.id}"><button
@@ -136,26 +136,27 @@
 											</div>
 										</form:form>
 										<h3>MY POSTS</h3>
-										<div class="row"  style="box-shadow: 0 0 0 1px blue; border-radius: 15px;">
+										<div class="row blueBox">
 											<div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
 												<h3>From</h3>
 											</div>
-											<div class="col-lg-3 col-md-9 col-sm-9 col-xs-9">
+											<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
 												<h3>Posts</h3>
 											</div>
 										</div>
 										<c:forEach items="${posts}" var="post">
-											<div class="row"  style="box-shadow: 0 0 0 1px silver; margin-bottom:5px;padding-top:5px; border-radius: 15px;">
+											<div class="row peoplePageBox">
 												<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 													<div class="row">
-														<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-center">
+														<div
+															class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-center">
 															<a href="/peoplePage/${post.writer.id}"><img
 																src="/images/userpage/${post.writer.id}${post.writer.path}?version=${post.writer.version}"
-																 height="50px"></a>
+																height="50px"></a>
 														</div>
 														<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-														<a href="/peoplePage/${post.writer.id}">	<b>${post.writer.name}<br>
-																${post.writer.surname}
+															<a href="/peoplePage/${post.writer.id}"> <b>${post.writer.name}<br>
+																	${post.writer.surname}
 															</b></a>
 														</div>
 													</div>
@@ -166,10 +167,8 @@
 													</div>
 													<div>${post.text}</div>
 												</div>
-												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-													<div class="date">
-														<sup>${post.date}</sup>
-													</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 date">
+													<sup>${post.date}</sup>
 												</div>
 												<p></p>
 											</div>

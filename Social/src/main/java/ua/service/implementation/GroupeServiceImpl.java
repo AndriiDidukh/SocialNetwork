@@ -90,8 +90,12 @@ public class GroupeServiceImpl implements GroupeService {
 
 	@Override
 	public List<Groupe> findByCreators(Principal principal) {
-		int id = Integer.valueOf(principal.getName());
-		return groupeRepository.findByCreator(id);
+		try {
+			return groupeRepository.findByCreator(Integer.valueOf(principal.getName()));
+		} catch (Exception e) {
+		}
+		return null;
+
 	}
 
 }

@@ -16,11 +16,6 @@
 					<div class="collapse navbar-collapse" id="">
 						<ul class="nav navbar-nav">
 							<li><a href="/admin/userPage">UserPage</a></li>
-							<li><a href="/admin/country">Country</a></li>
-							<li><a href="/admin/sex">Sex</a></li>
-							<li><a href="/admin/dayOfBirth">DayOfBirth</a></li>
-							<li><a href="/admin/mounthOfBirth">MounthOfBirth</a></li>
-							<li><a href="/admin/yearOfBirth">YearOfBirth</a></li>
 							<li><a href="/admin/post">Post</a></li>
 							<li><a href="/admin/groupe">Groupe</a></li>
 							<li><a href="/admin/message">Message</a></li>

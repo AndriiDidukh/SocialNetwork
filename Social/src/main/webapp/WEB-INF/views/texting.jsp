@@ -15,11 +15,11 @@
 		<div class="azx">
 			<h3>To view this page you need to SignIn</h3>
 			<h3>
-				<a href="/login">SingIn</a>
+				<a href="/login">Sing In</a>
 			</h3>
-			<h3>Still not registered? Register now!</h3>
+			<h3>Still not registered? Registrate now!</h3>
 			<h3>
-				<a href="/registration">Register</a>
+				<a href="/registration">Sign Up</a>
 			</h3>
 		</div>
 	</security:authorize>
@@ -48,8 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"
-					style="box-shadow: 0 0 0 4px green;">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 greenRightBox">
 					<div class="Header">
 						<div class="name">
 							<a><security:authentication property="principal.name" /> <security:authentication
@@ -88,12 +87,10 @@
 							<div class="row">
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 									<div class="row">
-										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-											<div class="aligncenter">
-												<img
-													src="/images/userpage/${message.senderId.id}${message.senderId.path}?version=${message.senderId.version}"
-													height="60px">
-											</div>
+										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 aligncenter">
+											<img
+												src="/images/userpage/${message.senderId.id}${message.senderId.path}?version=${message.senderId.version}"
+												height="60px">
 										</div>
 										<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
 											<div class="span">${message.senderId.name}<br>${message.senderId.surname}</div>

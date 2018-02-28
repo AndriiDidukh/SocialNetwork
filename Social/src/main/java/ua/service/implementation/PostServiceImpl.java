@@ -107,8 +107,7 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public List<Post> findByOwners(Principal principal) {
 		try {
-			int id = Integer.valueOf(principal.getName());
-			return postRepository.findByOwners(id);
+			return postRepository.findByOwners(Integer.valueOf(principal.getName()));
 		} catch (NullPointerException e) {
 		}
 		return null;
@@ -117,19 +116,25 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public List<Post> findByWriter(Principal principal) {
-		int id = Integer.valueOf(principal.getName());
-		return postRepository.findByWriters(id);
+		try {
+			return postRepository.findByWriters(Integer.valueOf(principal.getName()));
+		} catch (Exception e) {
+		}
+		return null;
 	}
 
 	@Override
 	public List<Post> findAllById(int id) {
-
 		return postRepository.findByOwners(id);
 	}
 
 	@Override
 	public List<Post> findMyPosts(Principal principal) {
-		return postRepository.findMyPosts(Integer.valueOf(principal.getName()));
+		try {
+			return postRepository.findMyPosts(Integer.valueOf(principal.getName()));
+		} catch (Exception e) {
+		}
+		return null;
 	}
 
 }

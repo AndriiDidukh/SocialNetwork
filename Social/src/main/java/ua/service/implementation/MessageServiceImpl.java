@@ -90,10 +90,8 @@ public class MessageServiceImpl implements MessageService {
 	@Override
 	public List<Message> findTexting(Principal principal, int id) {
 		try {
-			int a = Integer.valueOf(principal.getName());
-			return messageRepository.findMesseging(a, id);
+			return messageRepository.findMesseging(Integer.valueOf(principal.getName()), id);
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
 		return null;
 	}
@@ -113,8 +111,11 @@ public class MessageServiceImpl implements MessageService {
 
 	@Override
 	public List<Message> findByTexting(Principal principal) {
-
-		return messageRepository.findByTexting(Integer.valueOf(principal.getName()));
+		try {
+			return messageRepository.findByTexting(Integer.valueOf(principal.getName()));
+		} catch (Exception e) {
+		}
+		return null;
 	}
 
 }

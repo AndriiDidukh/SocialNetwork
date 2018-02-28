@@ -45,7 +45,13 @@ public class GroupeMemberServiceImpl implements GroupeMemberService {
 
 	@Override
 	public List<GroupePost> findPostBySubscriber(Principal principal) {
-		return groupePostRepository.findPostBySubscribe(Integer.valueOf(principal.getName()));
+		try {
+			return groupePostRepository.findPostBySubscribe(Integer.valueOf(principal.getName()));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+
 	}
 
 	@Override
@@ -55,7 +61,11 @@ public class GroupeMemberServiceImpl implements GroupeMemberService {
 
 	@Override
 	public List<GroupesMembers> findGroupes(Principal principal) {
-		return groupeMemberRepository.findGroupes(Integer.valueOf(principal.getName()));
+		try {
+			return groupeMemberRepository.findGroupes(Integer.valueOf(principal.getName()));
+		} catch (Exception e) {
+		}
+		return null;
 	}
 
 	@Override

@@ -15,10 +15,10 @@ import org.springframework.data.jpa.domain.Specifications;
 import ua.entity.Message;
 import ua.form.filter.MessageFilterForm;
 
-public class MessageFilterAdapter implements Specification<Message>{
-private final MessageFilterForm form;
-	
-	private final List<Specification<Message>> filters = new ArrayList<>();	
+public class MessageFilterAdapter implements Specification<Message> {
+	private final MessageFilterForm form;
+
+	private final List<Specification<Message>> filters = new ArrayList<>();
 
 	public MessageFilterAdapter(MessageFilterForm form) {
 		if (form != null) {
@@ -27,40 +27,38 @@ private final MessageFilterForm form;
 			this.form = new MessageFilterForm();
 		}
 	}
-	private void findByText(){
-		if(!form.getText().isEmpty()){
-			filters.add((root, query, cb)->root.get("text").in(form.getText()));
+
+	private void findByText() {
+		if (!form.getText().isEmpty()) {
+			filters.add((root, query, cb) -> root.get("text").in(form.getText()));
 		}
 	}
-	
-	private void findBySender(){
-		if(!form.getSenderIds().isEmpty()){
-			filters.add((root, query, cb)->root.get("senderId").in(form.getSenderIds()));
+
+	private void findBySender() {
+		if (!form.getSenderIds().isEmpty()) {
+			filters.add((root, query, cb) -> root.get("senderId").in(form.getSenderIds()));
 		}
 	}
-	
-	private void findByReciver(){
-		if(!form.getReciverIds().isEmpty()){
-			filters.add((root, query, cb)->root.get("reciwerId").in(form.getReciverIds()));
+
+	private void findByReciver() {
+		if (!form.getReciverIds().isEmpty()) {
+			filters.add((root, query, cb) -> root.get("reciwerId").in(form.getReciverIds()));
 		}
 	}
 
 	@Override
 	public Predicate toPredicate(Root<Message> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
 		if (query.getResultType() != Long.class && query.getResultType() != long.class) {
-			
-			
 			root.fetch("senderId", JoinType.LEFT);
 			root.fetch("reciverId", JoinType.LEFT);
 		}
 		findByText();
 		findBySender();
 		findByReciver();
-		
-		
-		if(!filters.isEmpty()){
+
+		if (!filters.isEmpty()) {
 			Specifications<Message> spec = Specifications.where(filters.get(0));
-			for(Specification<Message> s : filters.subList(1, filters.size())){
+			for (Specification<Message> s : filters.subList(1, filters.size())) {
 				spec = spec.and(s);
 			}
 			return spec.toPredicate(root, query, cb);

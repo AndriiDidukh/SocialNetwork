@@ -15,11 +15,11 @@
 		<div class="azx">
 			<h3>To view this page you need to SignIn</h3>
 			<h3>
-				<a href="/login">SingIn</a>
+				<a href="/login">Sing In</a>
 			</h3>
-			<h3>Still not registered? Register now!</h3>
+			<h3>Still not registered? Registrate now!</h3>
 			<h3>
-				<a href="/registration">Register</a>
+				<a href="/registration">Sign Up</a>
 			</h3>
 		</div>
 	</security:authorize>
@@ -48,8 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"
-					style="box-shadow: 0 0 0 4px green;">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 greenRightBox">
 					<div class="rightside" style="box-shadow: none;">
 						<div class="Header">
 							<div class="name">

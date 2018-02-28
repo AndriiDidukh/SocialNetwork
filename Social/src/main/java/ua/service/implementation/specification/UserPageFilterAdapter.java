@@ -39,24 +39,6 @@ public class UserPageFilterAdapter implements Specification<UserPage> {
 		}
 	}
 
-	private void findByDayOfBirth() {
-		if (!form.getDayOfBirthIds().isEmpty()) {
-			filters.add((root, query, cb) -> root.get("dayOfBirth").in(form.getDayOfBirthIds()));
-		}
-	}
-
-	private void findByMounthOfBirth() {
-		if (!form.getMounthOfBirthIds().isEmpty()) {
-			filters.add((root, query, cb) -> root.get("mounthOfBirth").in(form.getMounthOfBirthIds()));
-		}
-	}
-
-	private void findByYearOfBirth() {
-		if (!form.getYearOfBirthIds().isEmpty()) {
-			filters.add((root, query, cb) -> root.get("yearOfBirth").in(form.getYearOfBirthIds()));
-		}
-	}
-
 	private void findByName() {
 		if (!form.getName().isEmpty()) {
 			filters.add((root, query, cb) -> root.get("name").in(form.getName()));
@@ -75,12 +57,6 @@ public class UserPageFilterAdapter implements Specification<UserPage> {
 		}
 	}
 
-	private void findByCity() {
-		if (!form.getCity().isEmpty()) {
-			filters.add((root, query, cb) -> root.get("city").in(form.getCity()));
-		}
-	}
-
 	private void findByEmail() {
 		if (!form.getEmail().isEmpty()) {
 			filters.add((root, query, cb) -> root.get("email").in(form.getEmail()));
@@ -89,24 +65,13 @@ public class UserPageFilterAdapter implements Specification<UserPage> {
 
 	@Override
 	public Predicate toPredicate(Root<UserPage> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-		if (query.getResultType() != Long.class && query.getResultType() != long.class) {
-
-			// root.fetch("country", JoinType.LEFT);
-			// root.get("gender");
-			// root.fetch("dayOfBirth", JoinType.LEFT);
-			// root.fetch("mounthOfBirth", JoinType.LEFT);
-			// root.fetch("yearOfBirth", JoinType.LEFT);
-		}
 		findBySurname();
 		findByPhone();
-		findByCity();
 		findByEmail();
 		findByName();
 		findByCountry();
 		findByGender();
-		findByDayOfBirth();
-		findByMounthOfBirth();
-		findByYearOfBirth();
+
 		if (!filters.isEmpty()) {
 			Specifications<UserPage> spec = Specifications.where(filters.get(0));
 			for (Specification<UserPage> s : filters.subList(1, filters.size())) {

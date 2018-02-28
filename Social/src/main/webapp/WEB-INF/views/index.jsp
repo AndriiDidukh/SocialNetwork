@@ -48,8 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"
-					style="box-shadow: 0 0 0 4px green;">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 greenRightBox">
 					<div class="rightside">
 						<div class="Header">
 							<div class="name">
@@ -92,7 +91,7 @@
 									</tr>
 									<tr>
 										<td>Place of residence</td>
-										<td>  ${user.country}, <security:authentication property="principal.city" /></td>
+										<td>${user.country}, ${user.city}</td>
 									</tr>
 									<tr>
 										<td>Email</td>
@@ -100,74 +99,81 @@
 									</tr>
 									<tr>
 										<td>Date of Birth</td>
-										<td>${user.dayOfBirth.id} ${user.mounthOfBirth}, ${user.yearOfBirth.id}</td>
+										<td>${user.dayOfBirth.id} ${user.mounthOfBirth},
+											${user.yearOfBirth.id}</td>
 									</tr>
 								</table>
 							</div>
 						</div>
-						<div class="Wall">
-							<div class="records">
-								<h3>Add New Post</h3>
-								<form:form action="/" method="post" class="form-inline"
-									modelAttribute="post">
-									<form:hidden path="id" />
-									<custom:hiddenInputs excludeParams="name, id" />
-									<div class="form-group">
-										<div>
-											<form:input path="name" placeholder="Header"
-												class="form-control" />
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="Wall">
+									<div class="records">
+										<h3>Add New Post</h3>
+										<form:form action="/" method="post" class="form-inline"
+											modelAttribute="post">
+											<form:hidden path="id" />
+											<custom:hiddenInputs excludeParams="name, id" />
+											<div class="form-group">
+												<div>
+													<form:input path="name" placeholder="Header"
+														class="form-control" />
+												</div>
+												<div>
+													<form:input path="text" placeholder="Text"
+														class="form-control" size="50" />
+												</div>
+												<button type="submit" class="btn btn-primary">Create
+													Post</button>
+											</div>
+										</form:form>
+										<h3>MY POSTS</h3>
+										<div class="row blueBox">
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+												<h3>From</h3>
+											</div>
+											<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+												<h3>Posts</h3>
+											</div>
 										</div>
-										<div>
-											<form:input path="text" placeholder="Text"
-												class="form-control" size="50" />
-										</div>
-										<button type="submit" class="btn btn-primary">Create
-											Post</button>
-									</div>
-								</form:form>
-								<h3>MY POSTS</h3>
-								<div class="row blueBox">
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-										<h3>From</h3>
-									</div>
-									<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-										<h3>Posts</h3>
+										<c:forEach items="${posts}" var="post">
+											<div class="row postBox">
+												<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+													<div class="row">
+														<div
+															class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-center">
+															<a href="/peoplePage/${post.writer.id}"><img
+																src="/images/userpage/${post.writer.id}${post.writer.path}?version=${post.writer.version}"
+																height="50px"></a>
+														</div>
+														<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+															<a href="/peoplePage/${post.writer.id}"> <b>${post.writer.name}<br>
+																	${post.writer.surname}
+															</b></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+													<div class="row">
+														<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+															<b>${post.name}</b>
+														</div>
+														<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 date">
+															<a href="/post/delete/${post.id}<custom:allParams/>">
+																<sup>X</sup>
+															</a>
+														</div>
+													</div>
+													<div>${post.text}</div>
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 date">
+													<sup>${post.date}</sup>
+												</div>
+												<p></p>
+											</div>
+										</c:forEach>
 									</div>
 								</div>
-								<c:forEach items="${posts}" var="post">
-									<div class="row postBox">
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-											<div class="row">
-												<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 text-center">
-													<a href="/peoplePage/${post.writer.id}"><img
-														src="/images/userpage/${post.writer.id}${post.writer.path}?version=${post.writer.version}"
-														height="50px"></a>
-												</div>
-												<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-													<a href="/peoplePage/${post.writer.id}"> <b>${post.writer.name}<br>
-															${post.writer.surname}
-													</b></a>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-											<div class="row">
-												<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-													<b>${post.name}</b>
-												</div>
-												<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 date">
-													<a href="/post/delete/${post.id}<custom:allParams/>"> <sup>X</sup></a>
-												</div>
-											</div>
-											<div>${post.text}</div>
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 date">
-											<sup>${post.date}</sup>
-										</div>
-										<p></p>
-									</div>
-								</c:forEach>
-								<hr>
 							</div>
 						</div>
 					</div>

@@ -56,10 +56,8 @@ public class PostFilterAdapter implements Specification<Post> {
 	@Override
 	public Predicate toPredicate(Root<Post> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
 		if (query.getResultType() != Long.class && query.getResultType() != long.class) {
-
 			root.fetch("owner", JoinType.LEFT);
 			root.fetch("writer", JoinType.LEFT);
-			
 		}
 
 		findByName();

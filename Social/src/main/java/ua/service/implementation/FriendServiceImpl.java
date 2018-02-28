@@ -39,12 +39,22 @@ public class FriendServiceImpl implements FriendService {
 
 	@Override
 	public List<Friend> findFriend1(Principal principal) {
-		return friendRepository.findFriend1(Integer.valueOf(principal.getName()));
+		try {
+			return friendRepository.findFriend1(Integer.valueOf(principal.getName()));
+		} catch (Exception e) {
+		}
+		return null;
+
 	}
 
 	@Override
 	public List<Friend> findFriend2(Principal principal) {
-		return friendRepository.findFriend2(Integer.valueOf(principal.getName()));
+		try {
+			return friendRepository.findFriend2(Integer.valueOf(principal.getName()));
+		} catch (Exception e) {
+		}
+		return null;
+
 	}
 
 	@Override
