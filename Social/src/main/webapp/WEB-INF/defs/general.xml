@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="common" template="/WEB-INF/layout/classic.jsp">
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+	</definition>
+
+	<definition name="index" extends="common">
+		<put-attribute name="title" value="Index" />
+		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+	</definition>
+
+	<definition name="peoplePage" extends="common">
+		<put-attribute name="title" value="People Page" />
+		<put-attribute name="body" value="/WEB-INF/views/peoplePage.jsp" />
+	</definition>
+
+	<definition name="groupePage" extends="common">
+		<put-attribute name="title" value="Groupe Page" />
+		<put-attribute name="body" value="/WEB-INF/views/groupePage.jsp" />
+	</definition>
+
+	<definition name="news" extends="common">
+		<put-attribute name="title" value="News" />
+		<put-attribute name="body" value="/WEB-INF/views/news.jsp" />
+	</definition>
+
+	<definition name="friends" extends="common">
+		<put-attribute name="title" value="Friends" />
+		<put-attribute name="body" value="/WEB-INF/views/friends.jsp" />
+	</definition>
+
+	<definition name="adminPanel" extends="common">
+		<put-attribute name="title" value="Admin Panel" />
+		<put-attribute name="body" value="/WEB-INF/views/adminPanel.jsp" />
+	</definition>
+
+	<definition name="adminMessage" extends="common">
+		<put-attribute name="title" value="Admin Message" />
+		<put-attribute name="body" value="/WEB-INF/views/adminMessage.jsp" />
+	</definition>
+
+	<definition name="message" extends="common">
+		<put-attribute name="title" value="Messages" />
+		<put-attribute name="body" value="/WEB-INF/views/message.jsp" />
+	</definition>
+
+	<definition name="texting" extends="common">
+		<put-attribute name="title" value="Texting" />
+		<put-attribute name="body" value="/WEB-INF/views/texting.jsp" />
+	</definition>
+
+	<definition name="adminUserPage" extends="common">
+		<put-attribute name="title" value="Admin User page" />
+		<put-attribute name="body" value="/WEB-INF/views/adminUserPage.jsp" />
+	</definition>
+
+	<definition name="adminPost" extends="common">
+		<put-attribute name="title" value="Admin Posts" />
+		<put-attribute name="body" value="/WEB-INF/views/adminPost.jsp" />
+	</definition>
+
+	<definition name="post" extends="common">
+		<put-attribute name="title" value="Posts" />
+		<put-attribute name="body" value="/WEB-INF/views/post.jsp" />
+	</definition>
+
+	<definition name="adminGroupe" extends="common">
+		<put-attribute name="title" value="Admin Groupe" />
+		<put-attribute name="body" value="/WEB-INF/views/adminGroupe.jsp" />
+	</definition>
+
+	<definition name="groupe" extends="common">
+		<put-attribute name="title" value="Groupes" />
+		<put-attribute name="body" value="/WEB-INF/views/groupe.jsp" />
+	</definition>
+
+	<definition name="login" extends="common">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>
+
+	<definition name="registration" extends="common">
+		<put-attribute name="title" value="Registration" />
+		<put-attribute name="body" value="/WEB-INF/views/registration.jsp" />
+	</definition>
+
+	<definition name="peopleSearch" extends="common">
+		<put-attribute name="title" value="People Search" />
+		<put-attribute name="body" value="/WEB-INF/views/peopleSearch.jsp" />
+	</definition>
+
+	<definition name="groupeSearch" extends="common">
+		<put-attribute name="title" value="Groupe Search" />
+		<put-attribute name="body" value="/WEB-INF/views/groupeSearch.jsp" />
+	</definition>
+</tiles-definitions>

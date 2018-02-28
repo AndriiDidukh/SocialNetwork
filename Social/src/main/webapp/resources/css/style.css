@@ -1,0 +1,267 @@
+body {
+	margin: 0;
+	padding: 0;
+	font: 1em 'PT Sans', Tahoma, Arial;
+	background: #333;
+}
+
+.lol {
+	box-shadow: 0 0 0 4px green;
+}
+
+.container {
+	width: 1000px;
+	box-shadow: 0 0 0 4px green;
+	height: 100%;
+}
+
+.logout {
+	height: 40px;
+	float: left;
+	width: 10%;
+}
+
+ul.leftul {
+	margin-top: 60px;
+}
+
+ul.leftul li {
+	list-style: none;
+	height: 100%;
+}
+
+.azx {
+	text-align: center;
+}
+
+ul.leftul li a {
+	text-align: left;
+	height: 30px;
+	display: block;
+	text-decoration: none;
+	list-style: none;
+	text-shadow: 1px -1px 1px blue;
+}
+
+.groupeMembers {
+	margin: 10px;
+	display: block;
+	width: 50%;
+	height: 70px;
+	box-shadow: 0 0 0 4px green;
+}
+
+.Header {
+	clear: both;
+	width: 100%;
+	height: 40px;
+	background-color: black;
+}
+
+.name {
+	text-align: center;
+	padding-top: 15px;
+	width: 40%;
+	height: 40px;
+	color: blue;
+	display: block;
+	float: left;
+}
+
+.rightside {
+	width: 100%;
+	height: 300px;
+	box-shadow: 0 0 0 4px green;
+}
+
+.topul {
+	float: left;
+	height: 100%;
+	width: 100%;
+	font-family: Arial, sans-serif;
+}
+
+ul.topul li {
+	display: inline-block;
+	list-style: none;
+	width: 40%;
+	height: 100%;
+	float: left;
+	owerflow: hidden;
+}
+
+ul.topul li a {
+	display: block;
+	color: red;
+	background: silver;
+	text-decoration: none;
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	text-shadow: 1px -1px 0px red;
+	border-radius: 25px;
+	transition: 1s;
+	owerflow: hidden;
+}
+
+ul.topul li a:hover {
+	color: blue;
+	background: white;
+	text-shadow: 1px 1px 1px blue;
+}
+
+.information {
+	width: 100%;
+	height: 275px;
+}
+
+.message {
+	padding-left: 30px;
+}
+
+.topMenu {
+	height: 40px;
+	width: 50%;
+	float: left;
+}
+
+.foto {
+	margin-left: 50px;
+	float: left;
+}
+
+.inf {
+	float: left;
+	margin-left: 30px;
+	width: 60%;
+}
+
+td {
+	height: 30px;
+	width: 40%;
+	color: blue;
+}
+
+.Wall {
+	height: 100%;
+	width: 100%;
+}
+
+.aa {
+	padding: 5px 10px;
+	width: 70%;
+	border-radius: 10px;
+	height: 30px;
+	font-style: italic;
+	color: blue;
+}
+
+.records {
+	margin: 0px 100px;
+	color: blue;
+}
+
+.SingIn {
+	color: blue;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.login {
+	color: blue;
+}
+
+.pass {
+	color: blue;
+}
+
+.button {
+	color: black;
+	width: 150px;
+	background: green;
+}
+
+h3 {
+	text-shadow: 1px 1px 1px green;
+}
+
+h4 {
+	text-shadow: 1px 1px 1px green;
+}
+
+.span {
+	color: blue;
+	height: 30px;
+	text-shadow: 1px 1px 1px green;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.date {
+	text-align: right;
+}
+
+table {
+	margin-top: 30px;
+}
+
+.marg {
+	margin-top: 10px;
+}
+
+.distance {
+	text-size: 1px;
+	width: 100%;
+}
+
+.postBox {
+	box-shadow: 0 0 0 1px silver;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	border-radius: 15px;
+}
+
+.postBox2 {
+	box-shadow: 0 0 0 1px silver;
+	margin-right: 30px !important;
+	border-radius: 15px;
+	padding-top: 5px;
+}
+
+.blueBox {
+	box-shadow: 0 0 0 1px blue !important;
+	border-radius: 15px !important;
+}
+
+.greenBox {
+	box-shadow: 0 0 0 1px green !important;
+	border-radius: 15px !important;
+	margin-right: 30px !important;
+	margin-bottom: 10px;
+}
+
+.groupeBox {
+	box-shadow: 0 0 0 1px blue;
+	margin-right: 30px !important;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	padding-top: 5px;
+}
+
+.groupeBox2 {
+	box-shadow: 0 0 0 1px blue;
+	margin-right: 30px !important;
+	margin-bottom: 10px;
+	margin-left:20px !important;
+	border-radius: 15px;
+	padding-top: 5px;
+}
+
+.groupeBoxGreen {
+	box-shadow: 0 0 0 1px Green;
+	margin: 10px 30px 10px 20px !important;
+	border-radius: 15px;
+	padding-top: 5px;
+}
